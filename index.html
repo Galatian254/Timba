@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eldoret Nights - Premium Club Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Background Images for Sections */
+        #events {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #vip {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #gallery {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Global Styles */
+        :root {
+            --primary: #8a2be2;
+            --secondary: #ff00ff;
+            --dark: #121212;
+            --light: #f5f5f5; /* Fixed invalid color value */
+            --accent: #00ffcc;
+            --success: #00cc66;
+            --error: #ff3333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        .page-section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: block;
+        }
+
+        .home-section {
+            padding-top: 0;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(to right, var(--dark), var(--primary));
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background: var(--dark);
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-buttons button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-left: 15px;
+        }
+        
+        .auth-buttons button:hover {
+            background: var(--secondary);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Events Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .event-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .event-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        
+        .event-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .event-info {
+            padding: 20px;
+        }
+        
+        .event-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .event-price {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        
+        .book-button {
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .book-button:hover {
+            background: var(--secondary);
+        }
+
+        /* VIP Section */
+        .vip-packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .vip-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .vip-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .vip-card.featured {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: scale(1.05);
+        }
+
+        .vip-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .vip-price {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .vip-features {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .vip-features li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .vip-features li:before {
+            content: '✓';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: var(--secondary);
+            color: var(--light);
+        }
+
+        /* Auth Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--dark);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .auth-button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .auth-button:hover {
+            background: var(--secondary);
+            color: var(--light);
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .form-footer a {
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success {
+            background: rgba(0, 204, 102, 0.2);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+        
+        .error {
+            background: rgba(255, 51, 51, 0.2);
+            color: var(--error);
+            border: 1px solid var(--error);
+        }
+        
+        /* M-Pesa Payment Modal */
+        .mpesa-logo {
+            text-align: center;
+            margin: 20px 0;
+            color: #00b300;
+            font-size: 2rem;
+        }
+        
+        .pay-button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .pay-button:hover {
+            background: var(--secondary);
+            color: var(--light);
+        }
+        
+        /* User Profile */
+        .user-profile {
+            display: none;
+            align-items: center;
+        }
+        
+        .user-name {
+            margin-right: 15px;
+            font-weight: 500;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* Customer Care Chat */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chat-button {
+            background: var(--primary);
+            color: var(--light);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .chat-button:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+        
+        .chat-box {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background: var(--dark);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: var(--primary);
+            padding: 15px 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .bot-message {
+            background: rgba(255, 255, 255, 0.1);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .user-message {
+            background: var(--primary);
+            align-self: flex-end;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            margin-right: 10px;
+        }
+        
+        .send-button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            z-index: 1500;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-nav.active {
+            display: flex;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-nav-links li {
+            margin: 20px 0;
+        }
+        
+        .mobile-nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .mobile-nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .close-mobile-nav {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links, .auth-buttons {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .chat-box {
+                width: 300px;
+                right: -10px;
+            }
+            
+            .events-grid, .vip-packages, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .vip-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    TIMBA-XO
+                </div>
+                <ul class="nav-links">
+                    <li><a class="nav-link active" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#events">Events</a></li>
+                    <li><a class="nav-link" href="#vip">VIP</a></li>
+                    <li><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button id="loginBtn">Login</button>
+                    <button id="signupBtn">Sign Up</button>
+                </div>
+                <div class="user-profile" id="userProfile">
+                    <span class="user-name" id="userName">User</span>
+                    <div class="user-avatar" id="userAvatar">U</div>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-mobile-nav">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a class="nav-link active" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#events">Events</a></li>
+            <li><a class="nav-link" href="#vip">VIP</a></li>
+            <li><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+            <li><a href="#" id="mobileLoginBtn">Login</a></li>
+            <li><a href="#" id="mobileSignupBtn">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="page-section home-section">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Experience Eldoret's Ultimate Nightlife</h1>
+                    <p>Join us for unforgettable nights with top DJs, premium drinks, and the best atmosphere in the city.</p>
+                    <button class="cta-button" id="heroCta">Book Your Spot Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Preview Section -->
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="LUO_NIGHT.jpg" alt="LUO NIGHT"width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Thursday 28th August</div>
+                        <h3 class="event-title">LUO NIGHT</h3>
+                        <p>LUO NIGHT with Musa Jakadala + Odongo Swagg</p>
+                        <div class="event-price"></div>
+                        <button class="book-button" data-event="LUO NIGHT" data-price="1500">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="KOROM_FESTIVAL.jpg" alt="KOROM FESTIVAL"width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">30 August</div>
+                        <h3 class="event-title">KOROM FESTIVAL</h3>
+                        <p>KOROM FESTIVAL</p>
+                        <div class="event-price">Ksh 2000</div>
+                        <button class="book-button" data-event="KOROM FESTIVAL" data-price="2000">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="Kale_Vibes.jpg" alt="Event 3"width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Saturday 15th September</div>
+                        <h3 class="event-title">Kale Vibes</h3>
+                        <p>Enjoy the weekend with the best DJs in town</p>
+                        <div class="event-price">Ksh 1200</div>
+                        <button class="book-button" data-event="Weekend Vibes" data-price="1200">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="page-section">
+        <div class="container">
+            <h2 class="section-title">All Events</h2>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="Eldoret_talent.jpg" alt="Eldoret got talent" width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Wednesday 03 September</div>
+                        <h3 class="event-title">Eldoret got talent</h3>
+                        <p>Featuring DJ Aleki & Mc Master Lexx</p>
+                        <div class="event-price">Ksh 1000</div>
+                        <button class="book-button" data-event="Eldoret got talent" data-price="1000">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="JIACHILIE_WEEKEND.jpg"  width="418px"alt="JIACHILIE WEEKEND">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Wednesday 22 October</div>
+                        <h3 class="event-title">CAMPUS RAMPAGE</h3>
+                        <p>TOXIC LYRIKALI with Dj Tibz and Mc Samdee</p>
+                        <div class="event-price">Ksh 300</div>
+                        <button class="book-button" data-event="JIACHILIE WEEKEND" data-price="300">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="RHUMBA_DAY.jpg" alt="RHUMBA" width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Thursday 04 September</div>
+                        <h3 class="event-title">RHUMBA</h3>
+                        <p>Rhumba on a Thursday with Papa Deno</p>
+                        <div class="event-price">Ksh 800</div>
+                        <button class="book-button" data-event="RHUMBA" data-price="800">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Additional Events -->
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="Urban_Saturday.jpg" alt="Urban Saturday" width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Saturday 13 September</div>
+                        <h3 class="event-title">Urban Saturday</h3>
+                        <p>Authentic vibes with Dj Perez, Maish Mkenya, Mc Smatter</p>
+                        <div class="event-price">Ksh 1500</div>
+                        <button class="book-button" data-event="Urban Saturday" data-price="1500">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="JIACHILIE_WEEKEND.jpg" alt="JIACHILIE SUNDAY BRUNCH" width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Sunday 14 September</div>
+                        <h3 class="event-title">JIACHILIE SUNDAY BRUNCH</h3>
+                        <p>Jiachilie sunday brunch with kenyan throwback stars. Live performance by Nameless and Juacali with Blaze the Dj and Mc Nick The Trend</p>
+                        <div class="event-price">Ksh 2000</div>
+                        <button class="book-button" data-event="JIACHILIE SUNDAY BRUNCH" data-price="2000">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-img">
+                        <img src="DONJO_MABER.jpg" alt="DONJO MABER" width="418px">
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date">Sunday 07 September /from 2pm</div>
+                        <h3 class="event-title">DONJO MABER</h3>
+                        <p>DONJO MABER at TIMBA outdoor. Live performance by Iyanii featuring Dj Tibz, Blaze The Deejay and Mc Nick The Trend</p>
+                        <div class="event-price">Ksh 1200</div>
+                        <button class="book-button" data-event="DONJO MABER" data-price="1200">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Section -->
+    <section id="vip" class="page-section">
+        <div class="container">
+            <h2 class="section-title">VIP Experience</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Elevate your night with our exclusive VIP packages</p>
+            
+            <div class="vip-packages">
+                <div class="vip-card">
+                    <div class="vip-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Regular</h3>
+                    <div class="vip-price">Ksh 5,000</div>
+                    <ul class="vip-features">
+                        <li>Priority entry</li>
+                        <li>Reserved seating</li>
+                        <li>Complimentary welcome drink</li>
+                        <li>Dedicated server</li>
+                    </ul>
+                    <button class="book-button" data-event="Regular VIP" data-price="5000">Book VIP</button>
+                </div>
+                
+                <div class="vip-card featured">
+                    <div class="vip-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>VIP</h3>
+                    <div class="vip-price">Ksh 10,000</div>
+                    <ul class="vip-features">
+                        <li>All Bronze benefits</li>
+                        <li>Premium bottle service</li>
+                        <li>Private booth</li>
+                        <li>Complimentary mixers</li>
+                        <li>VIP host</li>
+                    </ul>
+                    <button class="book-button" data-event="VIP Package" data-price="10000">Book VIP</button>
+                </div>
+                
+                <div class="vip-card">
+                    <div class="vip-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>VVIP</h3>
+                    <div class="vip-price">Ksh 20,000</div>
+                    <ul class="vip-features">
+                        <li>All Silver benefits</li>
+                        <li>Luxury bottle service</li>
+                        <li>Exclusive VIP area</li>
+                        <li>Personal security</li>
+                        <li>Complimentary food platter</li>
+                        <li>Meet & greet with DJs</li>
+                    </ul>
+                    <button class="book-button" data-event="VVIP Package" data-price="20000">Book VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Experience our vibrant atmosphere through these moments</p>
+            
+            <div class="gallery-grid">
+                <!-- Images -->
+                <div class="gallery-item">
+                    <img src="Dance_Floor.jpg" alt="Main Dance Floor">
+                    <div class="gallery-overlay">
+                        <h3>Main Dance Floor</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="DJ_Performance.jpg" alt="DJ Performance">
+                    <div class="gallery-overlay">
+                        <h3>DJ Performance</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Night_Celebration.jpg" alt="Celebration">
+                    <div class="gallery-overlay">
+                        <h3>Night Celebration</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="VIP_Lounge.jpg" alt="VIP Section">
+                    <div class="gallery-overlay">
+                        <h3>VIP Lounge</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Premium_Bar.jpg" alt="Bar Area">
+                    <div class="gallery-overlay">
+                        <h3>Premium Bar</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Light_Effects.jpg" alt="Light Show">
+                    <div class="gallery-overlay">
+                        <h3>Light Effects</h3>
+                    </div>
+                </div>
+                
+                <!-- Videos -->
+                <div class="gallery-item">
+                    <video controls poster="Night_Celebration.jpg">
+                        <source src="Party_Atmosphere.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-overlay">
+                        <h3>Party Atmosphere</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <video controls poster="Dance_Floor.jpg">
+                        <source src="Dance_Moments.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-overlay">
+                        <h3>Dance Moments</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <video controls poster="DJ_Performance.jpg">
+                        <source src="DJ_Mixing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-overlay">
+                        <h3>DJ Mixing</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Toyota, Eldoret, Kenya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+254 725919132</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>General inquiries-info@timbaxo.com <br> Job applications-officialtimbaxo@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Sunday 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h3>VIP Bookings</h3>
+                            <p>+254 725919132</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" placeholder="Enter subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message</label>
+                            <textarea id="contactMessage" placeholder="Enter your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to Your Account</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div id="loginMessage" class="message"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <div class="form-footer">
+                <p>Don't have an account? <a id="switchToSignup">Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Your Account</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div id="signupMessage" class="message"></div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone Number</label>
+                    <input type="tel" id="signupPhone" placeholder="e.g. 254712345678" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="auth-button">Create Account</button>
+            </form>
+            <div class="form-footer">
+                <p>Already have an account? <a id="switchToLogin">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- M-Pesa Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete Your Booking</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="mpesa-logo">
+                <i class="fas fa-mobile-alt"></i> M-PESA
+            </div>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="phone">M-Pesa Phone Number</label>
+                    <input type="tel" id="phone" placeholder="e.g. 254712345678" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Event: <span id="eventName"></span></label>
+                </div>
+                <div class="form-group">
+                    <label>Amount: Ksh <span id="eventPrice"></span></label>
+                </div>
+                <button type="submit" class="pay-button">Pay with M-Pesa</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Customer Care Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="chat-title">Customer Care</div>
+                <button class="close-chat">&times;</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot-message">
+                    Hello! How can we help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Timba XO</h3>
+                    <p>Where luxury meets lifestyle</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#vip">VIP</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Toyota, Eldoret</li>
+                        <li><i class="fas fa-phone"></i> +254 725919132</li>
+                        <li><i class="fas fa-envelope"></i> General inquiries-info@timbaxo.com <br>Job applications-officialtimbaxo@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Open Mon-Sun: 6PM - 4AM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Timba XO. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Navigation functionality
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Function to update active nav link
+            function updateActiveNavLink() {
+                const scrollPos = window.scrollY;
+                
+                // Get all sections
+                const sections = document.querySelectorAll('.page-section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Add click event to nav links for smooth scrolling
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile nav if open
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Update active nav link on scroll
+            window.addEventListener('scroll', updateActiveNavLink);
+            
+            // Authentication State
+            let currentUser = null;
+            
+            // DOM Elements
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+            const loginModal = document.getElementById('loginModal');
+            const signupModal = document.getElementById('signupModal');
+            const paymentModal = document.getElementById('paymentModal');
+            const closeModals = document.querySelectorAll('.close-modal');
+            const switchToSignup = document.getElementById('switchToSignup');
+            const switchToLogin = document.getElementById('switchToLogin');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const loginMessage = document.getElementById('loginMessage');
+            const signupMessage = document.getElementById('signupMessage');
+            const userProfile = document.getElementById('userProfile');
+            const userName = document.getElementById('userName');
+            const userAvatar = document.getElementById('userAvatar');
+            const authButtons = document.querySelector('.auth-buttons');
+            const mobileLoginBtn = document.getElementById('mobileLoginBtn');
+            const mobileSignupBtn = document.getElementById('mobileSignupBtn');
+            const contactForm = document.getElementById('contactForm');
+            
+            // Show Login Modal
+            function showLoginModal() {
+                loginModal.style.display = 'flex';
+                signupModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+                loginMessage.style.display = 'none';
+            }
+            
+            // Show Signup Modal
+            function showSignupModal() {
+                signupModal.style.display = 'flex';
+                loginModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+                signupMessage.style.display = 'none';
+            }
+            
+            // Close All Modals
+            function closeAllModals() {
+                loginModal.style.display = 'none';
+                signupModal.style.display = 'none';
+                paymentModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Show Message
+            function showMessage(element, message, type) {
+                element.textContent = message;
+                element.className = `message ${type}`;
+                element.style.display = 'block';
+                
+                // Auto hide success messages after 3 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        element.style.display = 'none';
+                    }, 3000);
+                }
+            }
+            
+            // Update UI based on authentication state
+            function updateAuthUI() {
+                if (currentUser) {
+                    // User is logged in
+                    authButtons.style.display = 'none';
+                    userProfile.style.display = 'flex';
+                    userName.textContent = currentUser.name;
+                    userAvatar.textContent = currentUser.name.charAt(0).toUpperCase();
+                } else {
+                    // User is logged out
+                    authButtons.style.display = 'flex';
+                    userProfile.style.display = 'none';
+                }
+            }
+            
+            // Login Functionality
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                // Simple validation
+                if (!email || !password) {
+                    showMessage(loginMessage, 'Please fill in all fields', 'error');
+                    return;
+                }
+                
+                // In a real app, this would be an API call
+                // For demo purposes, we'll simulate a successful login
+                if (email && password) {
+                    // Store user data (in a real app, this would come from the server)
+                    currentUser = {
+                        name: email.split('@')[0],
+                        email: email,
+                        phone: '254712345678'
+                    };
+                    
+                    // Update UI
+                    updateAuthUI();
+                    
+                    // Show success message and close modal
+                    showMessage(loginMessage, 'Login successful!', 'success');
+                    setTimeout(() => {
+                        closeAllModals();
+                        loginForm.reset();
+                    }, 1500);
+                } else {
+                    showMessage(loginMessage, 'Invalid email or password', 'error');
+                }
+            });
+            
+            // Signup Functionality
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('signupName').value;
+                const email = document.getElementById('signupEmail').value;
+                const phone = document.getElementById('signupPhone').value;
+                const password = document.getElementById('signupPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                // Validation
+                if (!name || !email || !phone || !password || !confirmPassword) {
+                    showMessage(signupMessage, 'Please fill in all fields', 'error');
+                    return;
+                }
+                
+                if (password !== confirmPassword) {
+                    showMessage(signupMessage, 'Passwords do not match', 'error');
+                    return;
+                }
+                
+                if (password.length < 6) {
+                    showMessage(signupMessage, 'Password must be at least 6 characters', 'error');
+                    return;
+                }
+                
+                // In a real app, this would be an API call
+                // For demo purposes, we'll simulate a successful signup
+                currentUser = {
+                    name: name,
+                    email: email,
+                    phone: phone
+                };
+                
+                // Update UI
+                updateAuthUI();
+                
+                // Show success message and close modal
+                showMessage(signupMessage, 'Account created successfully!', 'success');
+                setTimeout(() => {
+                    closeAllModals();
+                    signupForm.reset();
+                }, 1500);
+            });
+            
+            // Contact Form Submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('contactName').value;
+                const email = document.getElementById('contactEmail').value;
+                const subject = document.getElementById('contactSubject').value;
+                const message = document.getElementById('contactMessage').value;
+                
+                // In a real app, this would send the message to a server
+                alert(`Thank you ${name}! Your message has been sent. We'll get back to you soon.`);
+                contactForm.reset();
+            });
+            
+            // Logout functionality (when clicking on user avatar)
+            userAvatar.addEventListener('click', function() {
+                currentUser = null;
+                updateAuthUI();
+                alert('You have been logged out');
+            });
+            
+            // Event Listeners
+            loginBtn.addEventListener('click', showLoginModal);
+            signupBtn.addEventListener('click', showSignupModal);
+            mobileLoginBtn.addEventListener('click', showLoginModal);
+            mobileSignupBtn.addEventListener('click', showSignupModal);
+            switchToSignup.addEventListener('click', showSignupModal);
+            switchToLogin.addEventListener('click', showLoginModal);
+            
+            closeModals.forEach(button => {
+                button.addEventListener('click', closeAllModals);
+            });
+            
+            window.addEventListener('click', (e) => {
+                if (e.target === loginModal || e.target === signupModal || e.target === paymentModal) {
+                    closeAllModals();
+                }
+            });
+            
+            // Payment Modal Functionality
+            const bookButtons = document.querySelectorAll('.book-button');
+            const eventNameSpan = document.getElementById('eventName');
+            const eventPriceSpan = document.getElementById('eventPrice');
+            const paymentForm = document.getElementById('paymentForm');
+            const heroCta = document.getElementById('heroCta');
+
+            // Function to open payment modal
+            function openPaymentModal(eventName, eventPrice) {
+                // Check if user is logged in
+                if (!currentUser) {
+                    alert('Please login or sign up to book events');
+                    showLoginModal();
+                    return;
+                }
+                
+                eventNameSpan.textContent = eventName;
+                eventPriceSpan.textContent = eventPrice;
+                paymentModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Add event listeners to book buttons
+            bookButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const eventName = button.getAttribute('data-event');
+                    const eventPrice = button.getAttribute('data-price');
+                    openPaymentModal(eventName, eventPrice);
+                });
+            });
+
+            // Hero CTA button opens first event modal
+            heroCta.addEventListener('click', () => {
+                openPaymentModal('LUO NIGHT', '1500');
+            });
+
+            // Payment form submission
+            paymentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const phone = document.getElementById('phone').value;
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const eventName = eventNameSpan.textContent;
+                const eventPrice = eventPriceSpan.textContent;
+                
+                // In a real implementation, this would connect to M-Pesa API
+                alert(`Payment initiated for ${eventName}. You will receive an M-Pesa prompt on ${phone}.`);
+                
+                // Simulate payment processing
+                setTimeout(() => {
+                    alert(`Payment successful! Confirmation sent to ${email}. See you at ${eventName}!`);
+                    closeAllModals();
+                    paymentForm.reset();
+                }, 3000);
+            });
+
+            // Chat Widget Functionality
+            const chatButton = document.getElementById('chatButton');
+            const chatBox = document.getElementById('chatBox');
+            const closeChat = document.querySelector('.close-chat');
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+
+            chatButton.addEventListener('click', () => {
+                chatBox.style.display = 'flex';
+                userInput.focus();
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatBox.style.display = 'none';
+            });
+
+            function addMessage(message, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('chat-message');
+                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+                messageDiv.textContent = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function handleUserMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                addMessage(message, true);
+                userInput.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    let response = "I'm sorry, I didn't understand that. Can you please rephrase?";
+                    
+                    if (message.toLowerCase().includes('hours') || message.toLowerCase().includes('open')) {
+                        response = "We're open Monday to Sunday from 6PM to 4AM.";
+                    } else if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                        response = "Ticket prices vary by event. Please check our events page for specific pricing.";
+                    } else if (message.toLowerCase().includes('vip') || message.toLowerCase().includes('table')) {
+                        response = "VIP tables start from Ksh 10,000. For reservations, call +254 725919132.";
+                    } else if (message.toLowerCase().includes('dress') || message.toLowerCase().includes('code')) {
+                        response = "We have a smart casual dress code. No sportswear or flip-flops please.";
+                    } else if (message.toLowerCase().includes('age') || message.toLowerCase().includes('id')) {
+                        response = "You must be 18+ to enter. Valid ID is required.";
+                    } else if (message.toLowerCase().includes('hello') || message.toLowerCase().includes('hi')) {
+                        response = "Hello! How can I help you today?";
+                    } else if (message.toLowerCase().includes('booking') || message.toLowerCase().includes('book')) {
+                        response = "You can book tickets directly through our website. Just click on any event and follow the payment process.";
+                    } else if (message.toLowerCase().includes('location') || message.toLowerCase().includes('where')) {
+                        response = "We're located in Toyota, Eldoret. The exact address will be provided after booking.";
+                    } else if (message.toLowerCase().includes('login') || message.toLowerCase().includes('account')) {
+                        response = "You can login or create an account using the buttons in the top right corner of the website.";
+                    } else if (message.toLowerCase().includes('gallery')) {
+                        response = "Check out our gallery section to see photos and videos from our events!";
+                    } else if (message.toLowerCase().includes('contact')) {
+                        response = "You can find our contact information in the contact section or call us at +254 725919132.";
+                    }
+                    
+                    addMessage(response, false);
+                }, 1000);
+            }
+
+            sendButton.addEventListener('click', handleUserMessage);
+            
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleUserMessage();
+                }
+            });
+
+            // Mobile Menu Functionality
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileNav = document.getElementById('mobileNav');
+            const closeMobileNav = document.querySelector('.close-mobile-nav');
+
+            mobileMenu.addEventListener('click', () => {
+                mobileNav.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMobileNav.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close mobile nav when clicking on a link
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Initialize UI
+            updateAuthUI();
+        });
+    </script>
+</body>
+</html>
